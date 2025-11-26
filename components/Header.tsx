@@ -30,17 +30,17 @@ export const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Section */}
-        <a href="#home" className="group z-50 relative flex items-center gap-3 md:gap-4">
+        <a href="#home" className="group z-50 relative flex items-center gap-4">
           <img 
-            src="/logo.jpg" 
+            src="/logo.svg" 
             alt="Juline Walch Logo" 
-            className="h-12 md:h-16 w-auto object-contain mix-blend-multiply"
+            className="h-14 md:h-16 w-auto object-contain"
           />
           <div className="flex flex-col justify-center">
-            <h1 className="text-xl md:text-2xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity leading-tight">
+            <h1 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity leading-none mb-0.5">
               Juline Walch
             </h1>
-            <span className="block text-[9px] md:text-[10px] font-sans font-medium text-brand-accent tracking-[0.15em] uppercase group-hover:text-brand-primary transition-colors">
+            <span className="block text-[10px] md:text-[11px] font-sans font-bold text-brand-primary tracking-[0.2em] uppercase group-hover:text-brand-dark transition-colors">
               Pferdephysiotherapie
             </span>
           </div>
