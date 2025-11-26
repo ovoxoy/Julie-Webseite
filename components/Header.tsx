@@ -24,19 +24,26 @@ export const Header: React.FC = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${
         isScrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-sm py-3 border-brand-light' 
-          : 'bg-transparent py-6'
+          ? 'bg-white/90 backdrop-blur-md shadow-sm py-2 border-brand-light' 
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <a href="#home" className="group z-50 relative">
-          <h1 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity">
-            Juline Walch
-          </h1>
-          <span className="block text-[10px] md:text-xs font-sans font-medium text-brand-accent tracking-[0.2em] uppercase mt-0.5 group-hover:text-brand-primary transition-colors">
-            Pferdephysiotherapie
-          </span>
+        {/* Logo Section */}
+        <a href="#home" className="group z-50 relative flex items-center gap-3 md:gap-4">
+          <img 
+            src="/Logo.jpg" 
+            alt="Juline Walch Logo" 
+            className="h-12 md:h-16 w-auto object-contain mix-blend-multiply"
+          />
+          <div className="flex flex-col justify-center">
+            <h1 className="text-xl md:text-2xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity leading-tight">
+              Juline Walch
+            </h1>
+            <span className="block text-[9px] md:text-[10px] font-sans font-medium text-brand-accent tracking-[0.15em] uppercase group-hover:text-brand-primary transition-colors">
+              Pferdephysiotherapie
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
