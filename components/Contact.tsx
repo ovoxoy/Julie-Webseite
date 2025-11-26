@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Instagram, Facebook, Clock, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 
-// HIER DEINE ID EINFÜGEN:
-// Melde dich auf https://formspree.io/ an, erstelle ein neues Formular
-// und kopiere die ID (z.B. "xpzqjrkw") hier hinein:
-const FORMSPREE_ID = "x_DEINE_ID_HIER_x"; 
+// Deine Formspree ID ist jetzt hier hinterlegt:
+const FORMSPREE_ID = "mvgjpjyj"; 
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -26,12 +24,6 @@ export const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Check if user forgot to replace the ID
-    if (FORMSPREE_ID === "x_DEINE_ID_HIER_x") {
-        alert("Bitte trage im Code (Contact.tsx) noch deine Formspree-ID ein!");
-        return;
-    }
-
     setStatus('submitting');
 
     try {
