@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
         {/* Logo Section */}
         <a href="#home" className="group z-50 relative flex items-center gap-3 md:gap-4">
           <img 
-            src="/Logo.jpg" 
+            src="/logo.jpg" 
             alt="Juline Walch Logo" 
             className="h-12 md:h-16 w-auto object-contain mix-blend-multiply"
           />
