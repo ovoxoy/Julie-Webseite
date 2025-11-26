@@ -5,7 +5,6 @@ import { About } from './components/About';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { AIAdvisor } from './components/AIAdvisor';
 
 const App: React.FC = () => {
   return (
@@ -46,7 +45,6 @@ const App: React.FC = () => {
         <Contact />
       </main>
       <Footer />
-      <AIAdvisor />
     </div>
   );
 };

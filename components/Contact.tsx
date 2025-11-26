@@ -1,7 +1,60 @@
-import React from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Clock, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
+
+// HIER DEINE ID EINFÜGEN:
+// Melde dich auf https://formspree.io/ an, erstelle ein neues Formular
+// und kopiere die ID (z.B. "xpzqjrkw") hier hinein:
+const FORMSPREE_ID = "x_DEINE_ID_HIER_x"; 
 
 export const Contact: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    location: '',
+    message: ''
+  });
+  
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Check if user forgot to replace the ID
+    if (FORMSPREE_ID === "x_DEINE_ID_HIER_x") {
+        alert("Bitte trage im Code (Contact.tsx) noch deine Formspree-ID ein!");
+        return;
+    }
+
+    setStatus('submitting');
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', phone: '', location: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-brand-dark text-white">
       <div className="container mx-auto px-6">
@@ -29,7 +82,7 @@ export const Contact: React.FC = () => {
                   </a>
                   
                   <a 
-                    href="https://wa.me/4915156930990"
+                    href="https://api.whatsapp.com/send?phone=4915156930990"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white px-4 py-2 rounded-lg transition-all shadow-md hover:shadow-lg text-sm font-medium group"
@@ -78,37 +131,109 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Form Side */}
-          <div className="bg-brand-cream text-brand-dark p-8 md:p-10 rounded-3xl shadow-2xl">
-            <h4 className="text-2xl font-serif font-bold mb-6">Nachricht senden</h4>
-            <form className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase tracking-wide text-gray-500">Name</label>
-                  <input type="text" className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary" placeholder="Ihr Name" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase tracking-wide text-gray-500">Telefon</label>
-                  <input type="tel" className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary" placeholder="Ihre Nummer" />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-wide text-gray-500">Standort des Pferdes</label>
-                <input type="text" className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary" placeholder="PLZ / Ort" />
-              </div>
+          <div className="bg-brand-cream text-brand-dark p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+            {status === 'success' ? (
+               <div className="absolute inset-0 bg-brand-cream z-10 flex flex-col items-center justify-center p-8 text-center animate-fade-in-up">
+                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
+                   <CheckCircle size={40} />
+                 </div>
+                 <h4 className="text-2xl font-serif font-bold text-brand-dark mb-2">Vielen Dank!</h4>
+                 <p className="text-gray-600 mb-6">
+                   Ihre Nachricht wurde erfolgreich gesendet. Ich melde mich schnellstmöglich bei Ihnen.
+                 </p>
+                 <button 
+                   onClick={() => setStatus('idle')}
+                   className="text-brand-primary font-bold hover:text-brand-dark underline decoration-2 underline-offset-4"
+                 >
+                   Neue Nachricht senden
+                 </button>
+               </div>
+            ) : (
+              <>
+                <h4 className="text-2xl font-serif font-bold mb-6">Nachricht senden</h4>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-bold uppercase tracking-wide text-gray-500">Name *</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        id="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" 
+                        placeholder="Ihr Name" 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="phone" className="text-sm font-bold uppercase tracking-wide text-gray-500">Telefon *</label>
+                      <input 
+                        type="tel" 
+                        name="phone"
+                        id="phone"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" 
+                        placeholder="Ihre Nummer" 
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="location" className="text-sm font-bold uppercase tracking-wide text-gray-500">Standort des Pferdes *</label>
+                    <input 
+                      type="text" 
+                      name="location"
+                      id="location"
+                      required
+                      value={formData.location}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" 
+                      placeholder="PLZ / Ort" 
+                    />
+                  </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-wide text-gray-500">Nachricht</label>
-                <textarea rows={4} className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary" placeholder="Wie kann ich Ihnen helfen?"></textarea>
-              </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-bold uppercase tracking-wide text-gray-500">Nachricht *</label>
+                    <textarea 
+                      rows={4} 
+                      name="message"
+                      id="message"
+                      required
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all" 
+                      placeholder="Wie kann ich Ihnen helfen?"
+                    ></textarea>
+                  </div>
 
-              <button type="submit" className="w-full bg-brand-primary text-white font-bold py-4 rounded-lg hover:bg-brand-dark transition-colors shadow-lg mt-2">
-                Anfrage absenden
-              </button>
-              <p className="text-xs text-gray-400 text-center mt-4">
-                Ihre Daten werden vertraulich behandelt.
-              </p>
-            </form>
+                  {status === 'error' && (
+                    <div className="bg-red-50 text-red-600 p-3 rounded-lg flex items-center gap-2 text-sm">
+                      <AlertCircle size={16} />
+                      <span>Es gab einen Fehler. Bitte versuchen Sie es erneut oder rufen Sie an.</span>
+                    </div>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    disabled={status === 'submitting'}
+                    className="w-full bg-brand-primary text-white font-bold py-4 rounded-lg hover:bg-brand-dark transition-colors shadow-lg mt-2 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+                  >
+                    {status === 'submitting' ? (
+                      <>
+                        <Loader2 size={20} className="animate-spin" />
+                        Wird gesendet...
+                      </>
+                    ) : 'Anfrage absenden'}
+                  </button>
+                  <p className="text-xs text-gray-400 text-center mt-4">
+                    Pflichtfelder sind mit * markiert. Ihre Daten werden vertraulich behandelt.
+                  </p>
+                </form>
+              </>
+            )}
           </div>
 
         </div>
