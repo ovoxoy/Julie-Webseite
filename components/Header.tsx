@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
               Juline Walch
             </h1>
             <span className="block text-[10px] md:text-[11px] font-sans font-bold text-brand-primary tracking-[0.2em] uppercase group-hover:text-brand-dark transition-colors">
-              Pferdephysiotherapie
+              Pferdephysiotherapie München
             </span>
           </div>
         </a>

@@ -15,18 +15,13 @@ export const About: React.FC = () => {
               className="relative z-10 rounded-2xl shadow-xl w-full h-[600px] object-cover rotate-2 hover:rotate-0 transition-transform duration-700"
             />
             
-            <div className="absolute -bottom-8 -right-8 bg-brand-cream p-8 rounded-xl shadow-lg z-20 max-w-xs">
-              <p className="font-serif italic text-xl text-brand-dark">
-                "Jedes Pferd erzählt seine eigene Geschichte durch seinen Körper."
-              </p>
-            </div>
           </div>
 
           <div className="order-1 md:order-2 space-y-6">
             <h2 className="text-sm font-bold tracking-widest text-brand-accent uppercase">Über Mich</h2>
             <h3 className="text-4xl font-serif font-bold text-brand-dark">Juline Walch</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Die Leidenschaft für Pferde begleitet mich schon mein ganzes Leben. Als zertifizierte Pferdephysiotherapeutin habe ich es mir zur Aufgabe gemacht, Gesundheit und Wohlbefinden unserer Vierbeiner nachhaltig zu verbessern.
+              Die Leidenschaft für Pferde begleitet mich schon mein ganzes Leben. Als zertifizierte Pferdephysiotherapeutin und Dorntherapeutin habe ich es mir zur Aufgabe gemacht, Gesundheit und Wohlbefinden unserer Vierbeiner nachhaltig zu verbessern.
             </p>
             <p className="text-gray-600 leading-relaxed">
               Meine Arbeit basiert auf Ruhe, Geduld und fundiertem Fachwissen. Ich betrachte nicht nur das einzelne Symptom, sondern das Pferd als Ganzes – inklusive Ausrüstung, Training und Haltung.

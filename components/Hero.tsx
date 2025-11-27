@@ -7,7 +7,7 @@ export const Hero: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center">
         <div className="space-y-8 max-w-4xl">
           <div className="inline-block bg-brand-accent/20 text-brand-dark px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-2">
-            Mobil in ganz Süddeutschland
+            Mobil im Raum München
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-brand-dark leading-tight">
             Bewegung ist <br/>

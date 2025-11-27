@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Zap, Move, Search, ClipboardCheck, Layers } from 'lucide-react';
+import { Activity, Move, Search, ClipboardCheck, Layers, Droplets } from 'lucide-react';
 import { ServiceItem } from '../types';
 
 const services: ServiceItem[] = [
@@ -17,15 +17,15 @@ const services: ServiceItem[] = [
   },
   {
     id: '3',
-    title: 'Lasertherapie',
-    description: 'Unterstützung der Wundheilung, Schmerzlinderung bei Arthrose und Sehnenverletzungen durch Low-Level-Laser.',
-    iconName: 'Zap'
+    title: 'Dornmethode',
+    description: 'Sanfte und dynamische Korrektur von Wirbel- und Gelenkfehlstellungen zur Wiederherstellung der statischen Balance.',
+    iconName: 'Activity'
   },
   {
     id: '4',
-    title: 'Dry Needling',
-    description: 'Punktgenaue Behandlung von Triggerpunkten zur effektiven Lösung tiefer Muskelverspannungen.',
-    iconName: 'Activity'
+    title: 'Lymphdrainage',
+    description: 'Manuelle Entstauungstherapie zur Reduktion von Schwellungen, Gallen und zur Unterstützung des Stoffwechsels.',
+    iconName: 'Droplets'
   },
   {
     id: '5',
@@ -44,8 +44,8 @@ const services: ServiceItem[] = [
 const IconMap: Record<string, React.FC<any>> = {
   Move: Move,
   Layers: Layers,
-  Zap: Zap,
   Activity: Activity,
+  Droplets: Droplets,
   Search: Search,
   ClipboardCheck: ClipboardCheck
 };
@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
           <h3 className="text-4xl font-serif font-bold text-brand-dark mb-6">Therapieangebote</h3>
           <p className="text-gray-600">
             Jede Behandlung wird individuell auf die Bedürfnisse Ihres Pferdes abgestimmt. 
-            Mein Ziel ist es, die Selbstheilungskräfte zu aktivieren und langfristige Gesundheit zu fördern.
+            Mein Ziel ist es, die langfristige Gesundheit zu fördern.
           </p>
         </div>
 
