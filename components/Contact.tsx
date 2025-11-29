@@ -104,7 +104,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Einsatzgebiet</h4>
-                  <p className="text-brand-light">Großraum Süddeutschland & mobile Fahrpraxis.</p>
+                  <p className="text-brand-light">Raum München & mobile Fahrpraxis.</p>
                 </div>
               </div>
             </div>

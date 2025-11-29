@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Calendar } from 'lucide-react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onNavigate: (page: 'home' | 'impressum' | 'datenschutz') => void;
+  currentPage: string;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,6 +18,27 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href.startsWith('#')) {
+      // If on a legal page, go home first, then scroll
+      if (currentPage !== 'home') {
+        onNavigate('home');
+        // Wait a tick for home to render before scrolling
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          element?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        // Already on home
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Handle external links or other logic if needed
+    }
+  };
+
   const navLinks = [
     { name: 'Start', href: '#home' },
     { name: 'Über mich', href: '#about' },
@@ -23,14 +49,14 @@ export const Header: React.FC = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${
-        isScrolled 
+        isScrolled || currentPage !== 'home'
           ? 'bg-white/90 backdrop-blur-md shadow-sm py-2 border-brand-light' 
           : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Section */}
-        <a href="#home" className="group z-50 relative flex items-center gap-4">
+        <button onClick={() => onNavigate('home')} className="group z-50 relative flex items-center gap-4 text-left">
           <img 
             src="/logo.svg" 
             alt="Juline Walch Logo" 
@@ -44,34 +70,34 @@ export const Header: React.FC = () => {
               Pferdephysiotherapie München
             </span>
           </div>
-        </a>
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-2">
           {/* Nav Container with Glass Effect */}
           <nav className="flex items-center bg-white/60 backdrop-blur-md rounded-full px-2 py-1.5 border border-white/40 shadow-sm mr-4">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
+                onClick={() => handleNavClick(link.href)}
                 className="relative px-5 py-2 text-sm font-medium text-brand-dark/80 hover:text-brand-dark transition-colors group"
               >
                 {link.name}
                 <span className="absolute bottom-1.5 left-1/2 w-0 h-0.5 bg-brand-primary transform -translate-x-1/2 group-hover:w-1/3 transition-all duration-300 opacity-0 group-hover:opacity-100 rounded-full"></span>
-              </a>
+              </button>
             ))}
           </nav>
           
-          <a 
-            href="#contact" 
+          <button 
+            onClick={() => handleNavClick('#contact')}
             className={`
               flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5
-              ${isScrolled ? 'bg-brand-dark text-white hover:bg-brand-primary' : 'bg-brand-dark text-white hover:bg-brand-primary'}
+              ${(isScrolled || currentPage !== 'home') ? 'bg-brand-dark text-white hover:bg-brand-primary' : 'bg-brand-dark text-white hover:bg-brand-primary'}
             `}
           >
             <Calendar size={16} />
             <span>Termin anfragen</span>
-          </a>
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -92,27 +118,25 @@ export const Header: React.FC = () => {
       >
         <div className="flex flex-col items-center space-y-6 w-full px-8">
           {navLinks.map((link) => (
-            <a
+            <button
               key={link.name}
-              href={link.href}
+              onClick={() => handleNavClick(link.href)}
               className="text-brand-dark text-2xl font-serif font-bold hover:text-brand-primary transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
-            </a>
+            </button>
           ))}
           
           <div className="w-12 h-0.5 bg-brand-accent/30 my-4"></div>
 
           <div className="flex flex-col gap-4 w-full max-w-xs">
-             <a 
-              href="#contact"
+             <button 
+              onClick={() => handleNavClick('#contact')}
               className="flex justify-center items-center gap-2 bg-brand-dark text-white px-6 py-4 rounded-xl font-medium shadow-lg active:scale-95 transition-transform w-full"
-              onClick={() => setIsMobileMenuOpen(false)}
             >
               <Calendar size={20} />
               <span>Termin anfragen</span>
-            </a>
+            </button>
             <a 
               href="tel:+4915156930990" 
               className="flex justify-center items-center gap-2 border-2 border-brand-dark text-brand-dark px-6 py-4 rounded-xl font-medium active:scale-95 transition-transform w-full hover:bg-brand-dark hover:text-white"

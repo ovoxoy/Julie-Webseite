@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate: (page: 'home' | 'impressum' | 'datenschutz') => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-brand-dark/95 text-brand-light py-12 border-t border-white/10">
       <div className="container mx-auto px-6">
@@ -11,9 +15,9 @@ export const Footer: React.FC = () => {
           </div>
           
           <div className="flex gap-6 text-sm font-medium tracking-wide">
-             <a href="#" className="hover:text-brand-accent transition-colors">Impressum</a>
-             <a href="#" className="hover:text-brand-accent transition-colors">Datenschutz</a>
-             <a href="#" className="hover:text-brand-accent transition-colors">AGB</a>
+             <button onClick={() => onNavigate('impressum')} className="hover:text-brand-accent transition-colors">Impressum</button>
+             <button onClick={() => onNavigate('datenschutz')} className="hover:text-brand-accent transition-colors">Datenschutz</button>
+             {/* AGB is often part of Impressum or not explicitly needed for small services, keeping link separate if needed later or pointing to Impressum */}
           </div>
           
           <div className="text-xs opacity-40">
