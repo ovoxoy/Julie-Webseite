@@ -1,116 +1,115 @@
 <!DOCTYPE html>
 <html lang="de" class="scroll-smooth">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Juline Walch - Professionelle Pferdephysiotherapie und Rehabilitation in Süddeutschland. Manuelle Therapie, Lasertherapie und ganzheitliche Behandlung für Ihr Pferd." />
+    <meta name="description"
+        content="Juline Walch - Professionelle Pferdephysiotherapie und Rehabilitation in Süddeutschland. Manuelle Therapie, Lasertherapie und ganzheitliche Behandlung für Ihr Pferd." />
     <meta name="theme-color" content="#21304D">
-    
+
     <!-- SEO: Canonical Link -->
     <link rel="canonical" href="https://juline-walch.de">
-    
+
     <!-- Browser Favicon -->
-    <link rel="icon" type="image/png" href="/icon32.png">
- 
+    <link rel="icon" type="image/png" href="icon32.png">
 
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/appletouch.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="appletouch.png">
 
     <!-- Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    
+    <link rel="manifest" href="manifest.json">
+
     <title>Juline Walch | Pferdephysiotherapie</title>
-    
-    <!-- SEO: Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Juline Walch Pferdephysiotherapie",
-      "url": "https://juline-walch.de",
-      "telephone": "+49 1515 6930990",
-      "description": "Professionelle Pferdephysiotherapie und Rehabilitation in Süddeutschland. Manuelle Therapie, Massage und Lasertherapie für Gesundheit und Leistungsfähigkeit.",
-      "image": [
-        "https://juline-walch.de/icon512.png",
-        "https://juline-walch.de/icon512.png"
-       ],
-      "logo": "https://juline-walch.de/icon512.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Süddeutschland",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "48.1351", 
-        "longitude": "11.5820"
-      },
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "08:00",
-          "closes": "18:00"
-        }
-      ],
-      "priceRange": "$$"
-    }
-    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              brand: {
-                dark: '#21304D',
-                primary: '#3F5B92',
-                light: '#CDD7EA',
-                accent: '#8DA3CE',
-                cream: '#EDF1F7',
-              }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#21304D',
+                            primary: '#3F5B92',
+                            light: '#CDD7EA',
+                            accent: '#8DA3CE',
+                            cream: '#EDF1F7',
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     </script>
-    <style>
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
+
+    <!-- SEO: Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Juline Walch Pferdephysiotherapie",
+    "url": "https://juline-walch.de",
+    "telephone": "+49 1515 6930990",
+    "description": "Professionelle Pferdephysiotherapie und Rehabilitation in Süddeutschland. Manuelle Therapie, Massage und Lasertherapie für Gesundheit und Leistungsfähigkeit.",
+    "image": [
+      "https://juline-walch.de/icon512.png",
+      "https://juline-walch.de/icon512.png"
+     ],
+    "logo": "https://juline-walch.de/icon512.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Süddeutschland",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.1351", 
+      "longitude": "11.5820"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
       }
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0"
+    ],
+    "priceRange": "$$"
   }
-}
-</script>
+  </script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
 </head>
-  <body class="bg-brand-cream text-brand-dark antialiased">
+
+<body class="bg-brand-cream text-brand-dark antialiased">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+    <script type="module" src="/src/index.tsx"></script>
+</body>
+
 </html>
