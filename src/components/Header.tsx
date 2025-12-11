@@ -132,7 +132,6 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </div>
 
       {/* Mobile Nav Overlay - Portaled to body to avoid stacking context issues */}
-      {/* Mobile Nav Overlay - Portaled to body to avoid stacking context issues */}
       {createPortal(
         <div
           className={`fixed inset-0 z-40 flex justify-end ${isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
