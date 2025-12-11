@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         const element = document.querySelector(href);
         element?.scrollIntoView({ behavior: 'smooth' });
       }
-    } 
+    }
   };
 
   const navLinks = [
@@ -46,19 +46,18 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${
-        isScrolled || currentPage !== 'home'
-          ? 'bg-white/90 backdrop-blur-md shadow-sm py-2 border-brand-light' 
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${isScrolled || currentPage !== 'home'
+          ? 'bg-white/90 backdrop-blur-md shadow-sm py-2 border-brand-light'
           : 'bg-transparent py-4'
-      }`}
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Section */}
         <button onClick={() => onNavigate('home')} className="group z-50 relative flex items-center gap-4 text-left">
-          <img 
-            src="/icon512.png" 
-            alt="Juline Walch Logo" 
+          <img
+            src="icon512.png"
+            alt="Juline Walch Logo"
             className="h-14 md:h-16 w-auto object-contain"
           />
           <div className="flex flex-col justify-center">
@@ -86,8 +85,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               </button>
             ))}
           </nav>
-          
-          <button 
+
+          <button
             onClick={() => handleNavClick('#contact')}
             className={`
               flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5
@@ -100,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="md:hidden text-brand-dark p-2 hover:bg-brand-light/50 rounded-lg transition-colors z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menü öffnen"
@@ -110,10 +109,9 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       </div>
 
       {/* Mobile Nav Overlay */}
-      <div 
-        className={`fixed inset-0 bg-brand-cream/95 backdrop-blur-xl z-40 transition-all duration-500 flex flex-col justify-center items-center md:hidden ${
-          isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 bg-brand-cream/95 backdrop-blur-xl z-40 transition-all duration-500 flex flex-col justify-center items-center md:hidden ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+          }`}
       >
         <div className="flex flex-col items-center space-y-6 w-full px-8">
           {navLinks.map((link) => (
@@ -125,19 +123,19 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               {link.name}
             </button>
           ))}
-          
+
           <div className="w-12 h-0.5 bg-brand-accent/30 my-4"></div>
 
           <div className="flex flex-col gap-4 w-full max-w-xs">
-             <button 
+            <button
               onClick={() => handleNavClick('#contact')}
               className="flex justify-center items-center gap-2 bg-brand-dark text-white px-6 py-4 rounded-xl font-medium shadow-lg active:scale-95 transition-transform w-full"
             >
               <Calendar size={20} />
               <span>Termin anfragen</span>
             </button>
-            <a 
-              href="tel:+4915156930990" 
+            <a
+              href="tel:+4915156930990"
               className="flex justify-center items-center gap-2 border-2 border-brand-dark text-brand-dark px-6 py-4 rounded-xl font-medium active:scale-95 transition-transform w-full hover:bg-brand-dark hover:text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >

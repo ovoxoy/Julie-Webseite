@@ -6,12 +6,12 @@ export const About: React.FC = () => {
     <section id="about" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          
+
           <div className="relative order-2 md:order-1">
             <div className="absolute -top-4 -left-4 w-full h-full bg-brand-light rounded-2xl z-0"></div>
-            <img 
-              src="/about.jpg" 
-              alt="Juline Walch bei der Arbeit" 
+            <img
+              src="about.jpg"
+              alt="Juline Walch bei der Arbeit"
               className="relative z-10 rounded-2xl shadow-xl w-full h-[600px] object-cover rotate-2 hover:rotate-0 transition-transform duration-700"
             />
           </div>
@@ -27,7 +27,7 @@ export const About: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
-              
+
               {/* Qualifikation 1 */}
               <div className="flex items-start gap-4 p-4 bg-brand-light/20 rounded-xl border border-transparent hover:border-brand-primary/20 transition-all">
                 <div className="bg-brand-primary/10 p-2.5 rounded-lg text-brand-primary shrink-0 mt-1">
