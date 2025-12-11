@@ -6,37 +6,37 @@ const services: ServiceItem[] = [
   {
     id: '1',
     title: 'Manuelle Therapie',
-    description: 'Mobilisation von Gelenken und Lösung von Blockaden zur Wiederherstellung der vollen Bewegungsfreiheit.',
+    description: 'Mobilisation von Gelenken und Lösung von Blockaden zur Wiederherstellung der vollen Bewegungsfreiheit. Unterstützung beim Muskelaufbau und beheben von Fehlstellungen und -haltungen',
     iconName: 'Move'
   },
   {
     id: '2',
-    title: 'Massage & Faszientechnik',
-    description: 'Lösen von Muskelverspannungen und Verklebungen im Bindegewebe für mehr Losgelassenheit.',
+    title: 'Kinesiotaping',
+    description: 'Unterstützung von Muskulatur, Faszien und Gelenken durch elastische Tapeanlagen – zur Schmerzreduktion und Stabilisierung nach der Behandlung.',
     iconName: 'Layers'
   },
   {
     id: '3',
     title: 'Dornmethode',
-    description: 'Sanfte und dynamische Korrektur von Wirbel- und Gelenkfehlstellungen zur Wiederherstellung der statischen Balance.',
+    description: 'Eine effektive Methode zur Korrektur von Blockaden im Bereich der Wirbelsäule und der großen Gelenke. Besonders hilfreich bei Asymmetrien, Schiefen oder Statikproblemen.',
     iconName: 'Activity'
   },
   {
     id: '4',
     title: 'Lymphdrainage',
-    description: 'Manuelle Entstauungstherapie zur Reduktion von Schwellungen, Gallen und zur Unterstützung des Stoffwechsels.',
+    description: 'Sanfte Griffe unterstützen den Abfluss von Gewebsflüssigkeit und reduzieren Schwellungen. Auch bei Stoffwechselproblemen, angelaufenen Beinen oder chronischen Lymphstauungen sehr effektiv.',
     iconName: 'Droplets'
   },
   {
     id: '5',
-    title: 'Ausrüstungscheck',
-    description: 'Überprüfung von Sattel und Zaumzeug auf Passform, um Druckstellen und Fehlbelastungen zu vermeiden.',
-    iconName: 'Search'
+    title: 'Reha-Planung',
+    description: 'Begleitung nach Verletzungen oder Operationen sowie bei chronischen Problemen mit derm Ziel kontrolliert die Belastung zu steigern, funktionelle Bewegungsmuster zu verbessern und die Regeneration nachhaltig zu gestalten.',
+    iconName: 'ClipboardCheck'
   },
   {
     id: '6',
-    title: 'Reha-Planung',
-    description: 'Individuelle Trainingspläne zum Muskelaufbau nach Verletzungen oder Pausen.',
+    title: 'Physiotherapeutische Training- und Turnierbegleitung',
+    description: 'Professionelle Betreuung direkt vor Ort zur körperlichen Unterstützung für optimale Leistung und gesunden Trainingsfortschritt.',
     iconName: 'ClipboardCheck'
   }
 ];
@@ -59,7 +59,7 @@ export const Services: React.FC = () => {
           <h3 className="text-4xl font-serif font-bold text-brand-dark mb-6">Therapieangebote</h3>
           <p className="text-gray-600">
             Jede Behandlung wird individuell auf die Bedürfnisse Ihres Pferdes abgestimmt. 
-            Mein Ziel ist es, die langfristige Gesundheit zu fördern.
+            Mein Ziel ist es, akute Reaktionen zu unterstützen und Gesundheit bis ins späte Alter zu fördern.
           </p>
         </div>
 

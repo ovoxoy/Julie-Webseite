@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
             <span className="text-brand-primary">Lebensqualität.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light max-w-2xl mx-auto">
-            Ganzheitliche Pferdephysiotherapie und Rehabilitation. 
+            Ganzheitliche Pferdephysiotherapie und Dorntherapie. 
             Ich helfe Ihrem Partner Pferd dabei, schmerzfrei, losgelassen und leistungsfähig zu bleiben.
           </p>
           

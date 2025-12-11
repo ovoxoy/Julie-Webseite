@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -6,6 +5,7 @@ import { About } from './components/About';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Pricing } from './components/Pricing';
 import { Impressum } from './components/Impressum';
 import { Datenschutz } from './components/Datenschutz';
 import { CookieBanner } from './components/CookieBanner';
@@ -37,15 +37,16 @@ const App: React.FC = () => {
                   <h3 className="text-3xl font-serif font-bold text-brand-dark">So arbeite ich</h3>
                 </div>
                 
-                <div className="grid md:grid-cols-4 gap-8">
+                <div className="grid md:grid-cols-5 gap-8 text-center">
                   {[
-                    { step: "01", title: "Anamnese", desc: "Ausführliches Vorgespräch und Sichtung vorhandener Befunde." },
-                    { step: "02", title: "Ganganalyse", desc: "Beurteilung des Pferdes im Stand und in der Bewegung." },
-                    { step: "03", title: "Palpation", desc: "Abtasten des gesamten Pferdekörpers auf Verspannungen." },
-                    { step: "04", title: "Behandlung", desc: "Individuelle Therapie und Erstellung eines Trainingsplans." }
+                    { step: "01", title: "Anamnese", desc: "Ausführliches Vorgespräch und Sichtung vorhandener Befunde" },
+                    { step: "02", title: "Ganganalyse", desc: "Beurteilung des Pferdes im Stand und in der Bewegung" },
+                    { step: "03", title: "Palpation", desc: "Abtasten des gesamten Pferdekörpers auf Verspannungen" },
+                    { step: "04", title: "Behandlung", desc: "Individuelle Therapie" },
+                    { step: "05", title: "Nachbesprechung", desc: "Gespräch um aufkommende Fragen grundlegend zu klären und den weiteren Verlauf zu besprechen" }
                   ].map((item) => (
                     <div key={item.step} className="relative p-6 border-l-2 border-brand-light hover:border-brand-primary transition-colors">
-                      <span className="text-5xl font-serif font-bold text-brand-light absolute -top-4 left-4 z-0 opacity-50">{item.step}</span>
+                      <span className="text-5xl font-serif font-bold text-brand-light text-center -top-4 left-4 z-0 opacity-50">{item.step}</span>
                       <div className="relative z-10 pt-4">
                         <h4 className="text-xl font-bold text-brand-dark mb-2">{item.title}</h4>
                         <p className="text-gray-600 text-sm">{item.desc}</p>
@@ -55,7 +56,8 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
-
+            
+            <Pricing />
             <Contact />
           </>
         );

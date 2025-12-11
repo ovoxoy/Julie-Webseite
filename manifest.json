@@ -1,0 +1,30 @@
+{
+  "name": "Juline Walch Pferdephysiotherapie München",
+  "short_name": "Pferdephysio Walch",
+  "description": "Professionelle Pferdephysiotherapie und Rehabilitation im Raum München. Manuelle Therapie, Lymphdrainage und ganzheitliche Behandlung für Ihr Pferd.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EDF1F7",
+  "theme_color": "#21304D",
+   "icons": [
+    {
+      "src": "/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": [
+    "health",
+    "medical",
+    "fitness"
+  ],
+  "lang": "de-DE",
+  "dir": "ltr",
+  "scope": "/"
+}

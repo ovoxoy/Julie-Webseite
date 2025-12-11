@@ -34,9 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         const element = document.querySelector(href);
         element?.scrollIntoView({ behavior: 'smooth' });
       }
-    } else {
-      // Handle external links or other logic if needed
-    }
+    } 
   };
 
   const navLinks = [
@@ -44,6 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     { name: 'Über mich', href: '#about' },
     { name: 'Leistungen', href: '#services' },
     { name: 'Ablauf', href: '#process' },
+    { name: 'Preise', href: '#pricing' },
   ];
 
   return (
@@ -58,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         {/* Logo Section */}
         <button onClick={() => onNavigate('home')} className="group z-50 relative flex items-center gap-4 text-left">
           <img 
-            src="/logo.svg" 
+            src="/icon512.png" 
             alt="Juline Walch Logo" 
             className="h-14 md:h-16 w-auto object-contain"
           />
@@ -80,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="relative px-5 py-2 text-sm font-medium text-brand-dark/80 hover:text-brand-dark transition-colors group"
+                className="relative px-4 py-2 text-sm font-medium text-brand-dark/80 hover:text-brand-dark transition-colors group"
               >
                 {link.name}
                 <span className="absolute bottom-1.5 left-1/2 w-0 h-0.5 bg-brand-primary transform -translate-x-1/2 group-hover:w-1/3 transition-all duration-300 opacity-0 group-hover:opacity-100 rounded-full"></span>
