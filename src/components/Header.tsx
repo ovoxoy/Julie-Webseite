@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Menu, X, Phone, Calendar } from 'lucide-react';
 
 interface HeaderProps {
@@ -17,6 +18,28 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Handle resize - close menu if switching to desktop view
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isMobileMenuOpen]);
 
   const handleNavClick = (href: string) => {
     setIsMobileMenuOpen(false);
@@ -47,9 +70,9 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent ${isScrolled || currentPage !== 'home'
-          ? 'bg-white/90 backdrop-blur-md shadow-sm py-2 border-brand-light'
-          : 'bg-transparent py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent ${isScrolled || currentPage !== 'home'
+        ? 'bg-white/90 backdrop-blur-md shadow-sm py-2 border-brand-light'
+        : 'bg-transparent py-4'
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -60,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             alt="Juline Walch Logo"
             className="h-14 md:h-16 w-auto object-contain"
           />
-          <div className="flex flex-col justify-center">
+          <div className={`flex flex-col justify-center transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 -translate-x-4' : 'opacity-100'}`}>
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity leading-none mb-0.5">
               Juline Walch
             </h1>
@@ -102,49 +125,66 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         <button
           className="md:hidden text-brand-dark p-2 hover:bg-brand-light/50 rounded-lg transition-colors z-50 relative"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Menü öffnen"
+          aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Nav Overlay */}
-      <div
-        className={`fixed inset-0 bg-brand-cream/95 backdrop-blur-xl z-40 transition-all duration-500 flex flex-col justify-center items-center md:hidden ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
-          }`}
-      >
-        <div className="flex flex-col items-center space-y-6 w-full px-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => handleNavClick(link.href)}
-              className="text-brand-dark text-2xl font-serif font-bold hover:text-brand-primary transition-colors"
-            >
-              {link.name}
-            </button>
-          ))}
+      {/* Mobile Nav Overlay - Portaled to body to avoid stacking context issues */}
+      {/* Mobile Nav Overlay - Portaled to body to avoid stacking context issues */}
+      {createPortal(
+        <div
+          className={`fixed inset-0 z-40 flex justify-end ${isMobileMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        >
+          {/* Backdrop - Fades in */}
+          <div
+            className={`absolute inset-0 bg-brand-dark/20 backdrop-blur-sm transition-opacity duration-500 ${isMobileMenuOpen ? 'opacity-100' : 'opacity-0'}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
 
-          <div className="w-12 h-0.5 bg-brand-accent/30 my-4"></div>
+          {/* Drawer - Slides in from right */}
+          <div
+            className={`relative w-full max-w-[320px] bg-brand-cream h-full shadow-2xl transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          >
+            <div className="flex flex-col h-full p-8 pt-28 overflow-y-auto">
+              <nav className="flex flex-col space-y-6">
+                {navLinks.map((link, idx) => (
+                  <button
+                    key={link.name}
+                    onClick={() => handleNavClick(link.href)}
+                    style={{ transitionDelay: `${100 + (idx * 50)}ms` }}
+                    className={`text-left text-2xl font-serif font-bold text-brand-dark hover:text-brand-primary transition-all duration-500 transform ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'}`}
+                  >
+                    {link.name}
+                  </button>
+                ))}
+              </nav>
 
-          <div className="flex flex-col gap-4 w-full max-w-xs">
-            <button
-              onClick={() => handleNavClick('#contact')}
-              className="flex justify-center items-center gap-2 bg-brand-dark text-white px-6 py-4 rounded-xl font-medium shadow-lg active:scale-95 transition-transform w-full"
-            >
-              <Calendar size={20} />
-              <span>Termin anfragen</span>
-            </button>
-            <a
-              href="tel:+4915156930990"
-              className="flex justify-center items-center gap-2 border-2 border-brand-dark text-brand-dark px-6 py-4 rounded-xl font-medium active:scale-95 transition-transform w-full hover:bg-brand-dark hover:text-white"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <Phone size={20} />
-              <span>Anrufen</span>
-            </a>
+              <div className="w-full h-px bg-brand-dark/10 my-8"></div>
+
+              <div className="flex flex-col gap-4">
+                <button
+                  onClick={() => handleNavClick('#contact')}
+                  className="flex justify-center items-center gap-2 bg-brand-dark text-white px-6 py-4 rounded-xl font-medium shadow-lg hover:bg-brand-primary active:scale-95 transition-all"
+                >
+                  <Calendar size={20} />
+                  <span>Termin anfragen</span>
+                </button>
+                <a
+                  href="tel:+4915156930990"
+                  className="flex justify-center items-center gap-2 border border-brand-dark/20 text-brand-dark px-6 py-4 rounded-xl font-medium hover:bg-white active:scale-95 transition-all"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <Phone size={20} />
+                  <span>Anrufen</span>
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </div>,
+        document.body
+      )}
     </header>
   );
 };
