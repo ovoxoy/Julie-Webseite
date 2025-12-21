@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         {/* Logo Section */}
         <button onClick={() => onNavigate('home')} className="group z-50 relative flex items-center gap-4 text-left">
           <img
-            src="logo.png"
+            src="icon512.png"
             alt="Juline Walch Logo"
             className="h-14 md:h-16 w-auto object-containy"
           />
