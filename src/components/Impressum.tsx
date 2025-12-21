@@ -15,8 +15,8 @@ export const Impressum: React.FC = () => {
             <h2 className="text-xl font-bold mb-2">Angaben gemäß § 5 TMG</h2>
             <p>Juline Walch</p>
             <p>Pferdephysiotherapie</p>
-            <p>[Musterstraße 1]</p>
-            <p>[80000 München]</p>
+            <p>Grubenstraße 18</p>
+            <p>82319 Starnberg</p>
           </div>
 
           <div>
@@ -51,7 +51,7 @@ export const Impressum: React.FC = () => {
 
           <div className="border-t border-gray-200 pt-6 mt-8">
             <h2 className="text-xl font-bold mb-4">Haftungsausschluss (Disclaimer)</h2>
-            
+
             <h3 className="font-bold mt-4">Haftung für Inhalte</h3>
             <p className="mb-2">Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
             <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>

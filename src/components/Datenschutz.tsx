@@ -9,13 +9,13 @@ export const Datenschutz: React.FC = () => {
     <section className="py-24 bg-white text-brand-dark min-h-screen">
       <div className="container mx-auto px-6 max-w-4xl">
         <h1 className="text-4xl font-serif font-bold mb-8 text-brand-dark">Datenschutzerklärung</h1>
-        
+
         <div className="space-y-6 text-gray-700">
           <div>
             <h2 className="text-2xl font-bold mb-4 text-brand-primary">1. Datenschutz auf einen Blick</h2>
             <h3 className="text-lg font-bold mt-2">Allgemeine Hinweise</h3>
             <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-            
+
             <h3 className="text-lg font-bold mt-4">Datenerfassung auf dieser Website</h3>
             <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
             <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt "Hinweis zur verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.</p>
@@ -38,7 +38,7 @@ export const Datenschutz: React.FC = () => {
 
           <div>
             <h2 className="text-2xl font-bold mb-4 text-brand-primary">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-            
+
             <h3 className="text-lg font-bold mt-2">Datenschutz</h3>
             <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
 
@@ -46,12 +46,12 @@ export const Datenschutz: React.FC = () => {
             <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
             <p className="mt-2">
               Juline Walch<br />
-              [Musterstraße 1]<br />
-              [80000 München]
+              Grubenstraße 18<br />
+              82319 Starnberg
             </p>
             <p className="mt-2">
               Telefon: +49 1515 6930990<br />
-              E-Mail: [info@juline-walch.de]
+              E-Mail: Juliewma@yahoo.com
             </p>
 
             <h3 className="text-lg font-bold mt-4">Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
@@ -60,7 +60,7 @@ export const Datenschutz: React.FC = () => {
 
           <div>
             <h2 className="text-2xl font-bold mb-4 text-brand-primary">4. Datenerfassung auf dieser Website</h2>
-            
+
             <h3 className="text-lg font-bold mt-2">Kontaktformular (via Formspree)</h3>
             <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
             <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.</p>

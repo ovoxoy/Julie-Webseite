@@ -79,9 +79,9 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         {/* Logo Section */}
         <button onClick={() => onNavigate('home')} className="group z-50 relative flex items-center gap-4 text-left">
           <img
-            src="icon512.png"
+            src="logo.png"
             alt="Juline Walch Logo"
-            className="h-14 md:h-16 w-auto object-contain"
+            className="h-14 md:h-16 w-auto object-containy"
           />
           <div className={`flex flex-col justify-center transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 -translate-x-4' : 'opacity-100'}`}>
             <h1 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity leading-none mb-0.5">

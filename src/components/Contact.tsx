@@ -1,8 +1,28 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Instagram, Facebook, Clock, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, CheckCircle, Loader2, AlertCircle } from 'lucide-react';
 
 // Formspree ID hier hinterlegt:
 const FORMSPREE_ID = "mvgjpjyj";
+
+const Instagram = ({ size = 24, className, ...props }: React.SVGProps<SVGSVGElement> & { size?: number | string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    {...props}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -110,13 +130,16 @@ export const Contact: React.FC = () => {
             </div>
 
             <div className="flex gap-4 pt-4">
-              <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors">
+              <a
+                href="https://www.instagram.com/pferdephysiotherapie.muenchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors"
+              >
                 <Instagram size={24} />
               </a>
-              <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors">
+
+              <a href="mailto:Juliewma@yahoo.com" className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors">
                 <Mail size={24} />
               </a>
             </div>
