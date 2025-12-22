@@ -28,6 +28,7 @@ export const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     location: '',
     message: ''
   });
@@ -58,7 +59,7 @@ export const Contact: React.FC = () => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', phone: '', location: '', message: '' });
+        setFormData({ name: '', phone: '', email: '', location: '', message: '' });
       } else {
         setStatus('error');
       }
@@ -148,7 +149,7 @@ export const Contact: React.FC = () => {
           {/* Form Side */}
           <div className="bg-brand-cream text-brand-dark p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
             {status === 'success' ? (
-              <div className="absolute inset-0 bg-brand-cream z-10 flex flex-col items-center justify-center p-8 text-center animate-fade-in-up">
+              <div className="bg-brand-cream z-10 flex flex-col items-center justify-center p-8 text-center animate-fade-in-up w-full h-full min-h-[200px]">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
                   <CheckCircle size={40} />
                 </div>
@@ -194,6 +195,20 @@ export const Contact: React.FC = () => {
                         placeholder="Ihre Nummer"
                       />
                     </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-bold uppercase tracking-wide text-gray-500">Email *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full bg-white border border-gray-200 rounded-lg p-3 focus:outline-none focus:border-brand-primary focus:ring-1 focus:ring-brand-primary transition-all"
+                      placeholder="Ihre E-Mail-Adresse"
+                    />
                   </div>
 
                   <div className="space-y-2">
