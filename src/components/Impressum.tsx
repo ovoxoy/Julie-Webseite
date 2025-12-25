@@ -22,7 +22,7 @@ export const Impressum: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">Kontakt</h2>
             <p>Telefon: +49 1515 6930990</p>
-            <p>E-Mail: [info@juline-walch.de]</p>
+            <p>E-Mail: [Juliewma@yahoo.com]</p>
           </div>
 
           <div>
