@@ -71,7 +71,7 @@ export const Pricing: React.FC = () => {
                                 <span className="text-sm text-gray-500 block">pro doppeltem Kilometer</span>
                             </div>
                             <p className="text-sm text-gray-600 leading-relaxed">
-                                Die Anfahrtskosten berechnen sich ab meinem Standort.
+                                Die Anfahrtskosten berechnen sich ab Starnberg 82319.
                                 <br /><br />
                                 <span className="flex items-center gap-2 text-brand-primary font-medium">
                                     <Info size={16} />

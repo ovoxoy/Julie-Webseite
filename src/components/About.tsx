@@ -19,7 +19,7 @@ export const About: React.FC = () => {
           <div className="order-1 md:order-2 space-y-6">
             <h2 className="text-sm font-bold tracking-widest text-brand-accent uppercase">Über Mich</h2>
             <h3 className="text-4xl font-serif font-bold text-brand-dark">Juline Walch,</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">
+            <p className="text-gray-600 leading-relaxed">
               Als mobile Pferdephysiotherapeutin im Raum München arbeite ich mit besonderem Interesse an der funktionellen Biomechanik des Pferdes. Durch mein laufendes Tiermedizinstudium und viele Jahre im dressurorientierten Training habe ich ein gutes Gefühl dafür entwickelt, wie Muskulatur, Körperhaltung und Bewegungsabläufe zusammenwirken.
             </p>
             <p className="text-gray-600 leading-relaxed">
@@ -69,7 +69,7 @@ export const About: React.FC = () => {
                 <div>
                   <h4 className="font-bold text-brand-dark">Abschlussarbeit</h4>
                   <p className="text-sm text-gray-600 mt-1 leading-snug">
-                    Physiotherapeutische Maßnahmen zur Verbesserung von Rittigkeit & Leistung
+                    Physiotherapeutische Maßnahmen in Bezug auf die muskuläre Biomechanik zur Verbesserung der Rittigkeit und Leistungsfähigkeit von Dressurpferden
                   </p>
                 </div>
               </div>

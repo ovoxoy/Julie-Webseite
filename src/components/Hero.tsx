@@ -10,24 +10,24 @@ export const Hero: React.FC = () => {
             Mobil im Raum München
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold text-brand-dark leading-tight">
-            Bewegung ist <br/>
+            Bewegung ist <br />
             <span className="text-brand-primary">Lebensqualität.</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light max-w-2xl mx-auto">
-            Ganzheitliche Pferdephysiotherapie und Dorntherapie. 
-            Ich helfe Ihrem Partner Pferd dabei, schmerzfrei, losgelassen und leistungsfähig zu bleiben.
+            Ganzheitliche Pferdephysiotherapie und Dorntherapie.
+            Ich helfe Ihrem Partner Pferd dabei, schmerzfrei, losgelassen und leistungsfähig zu werden.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="group bg-brand-dark text-white px-8 py-4 rounded-full font-medium hover:bg-brand-primary transition-all flex items-center justify-center gap-2 shadow-lg"
             >
               Termin vereinbaren
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a 
-              href="#services" 
+            <a
+              href="#services"
               className="px-8 py-4 rounded-full font-medium border-2 border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white transition-all text-center"
             >
               Leistungen entdecken
