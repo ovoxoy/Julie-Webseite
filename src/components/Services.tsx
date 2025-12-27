@@ -35,7 +35,7 @@ const services: ServiceItem[] = [
   },
   {
     id: '6',
-    title: 'Physiotherapeutische Training- und Turnierbegleitung',
+    title: 'Physiotherapeutisches Training und Turnierbegleitung',
     description: 'Professionelle Betreuung direkt vor Ort zur körperlichen Unterstützung für optimale Leistung und gesunden Trainingsfortschritt.',
     iconName: 'ClipboardCheck'
   }
@@ -58,7 +58,7 @@ export const Services: React.FC = () => {
           <h2 className="text-sm font-bold tracking-widest text-brand-accent uppercase mb-3">Leistungsspektrum</h2>
           <h3 className="text-4xl font-serif font-bold text-brand-dark mb-6">Therapieangebote</h3>
           <p className="text-gray-600 text-left md:text-center">
-            Jede Behandlung wird individuell auf die Bedürfnisse Ihres Pferdes abgestimmt. Mein Ziel ist es, akute Reaktionen zu unterstützen und Gesundheit bis ins späte Alter zu fördern.
+            Jede Behandlung wird individuell auf die Bedürfnisse Ihres Pferdes abgestimmt. Mein Ziel ist es, Durchlässigkeit und Gesundheit des Pferdes bis ins hohe Alter zu fördern.
           </p>
         </div>
 
