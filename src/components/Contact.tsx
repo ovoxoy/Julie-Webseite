@@ -140,7 +140,7 @@ export const Contact: React.FC = () => {
                 <Instagram size={24} />
               </a>
 
-              <a href="mailto:Juliewma@yahoo.com" className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors">
+              <a href="mailto:info@pferdephysiotherapie-muenchen.de" className="p-3 bg-white/10 rounded-full hover:bg-brand-accent transition-colors">
                 <Mail size={24} />
               </a>
             </div>

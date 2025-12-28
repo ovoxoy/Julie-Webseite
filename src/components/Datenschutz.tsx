@@ -51,7 +51,7 @@ export const Datenschutz: React.FC = () => {
             </p>
             <p className="mt-2">
               Telefon: +49 1515 6930990<br />
-              E-Mail: Juliewma@yahoo.com
+              E-Mail:info@pferdephysiotherapie-muenchen.de
             </p>
 
             <h3 className="text-lg font-bold mt-4">Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>

@@ -70,11 +70,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="md:col-span-4">
             <h6 className="text-white font-bold mb-3 md:mb-6 text-sm uppercase tracking-wider">Kontakt</h6>
             <div className="space-y-4">
-              <a href="mailto:Juliewma@yahoo.com" className="flex items-center gap-3 text-brand-light/70 hover:text-white transition-colors group">
+              <a href="mailto:info@pferdephysiotherapie-muenchen.de" className="flex items-center gap-3 text-brand-light/70 hover:text-white transition-colors group">
                 <div className="p-2 bg-white/5 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
                   <Mail size={18} />
                 </div>
-                <span>Juliewma@yahoo.com</span>
+                <span>info@pferdephysiotherapie-muenchen.de</span>
               </a>
               <a href="tel:+4915156930990" className="flex items-center gap-3 text-brand-light/70 hover:text-white transition-colors group">
                 <div className="p-2 bg-white/5 rounded-lg group-hover:bg-brand-accent/20 transition-colors">
