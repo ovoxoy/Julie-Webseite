@@ -57,7 +57,7 @@ export const Services: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-bold tracking-widest text-brand-accent uppercase mb-3">Leistungsspektrum</h2>
           <h3 className="text-4xl font-serif font-bold text-brand-dark mb-6">Therapieangebote</h3>
-          <p className="text-gray-600 text-left md:text-center">
+          <p className="text-gray-600">
             Jede Behandlung wird individuell auf die Bedürfnisse Ihres Pferdes abgestimmt. Mein Ziel ist es, Durchlässigkeit und Gesundheit des Pferdes bis ins hohe Alter zu fördern.
           </p>
         </div>
