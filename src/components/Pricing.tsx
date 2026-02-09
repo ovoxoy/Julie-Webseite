@@ -67,7 +67,7 @@ export const Pricing: React.FC = () => {
                                 <h4 className="font-bold text-brand-dark">Anfahrt</h4>
                             </div>
                             <div className="mb-4">
-                                <span className="text-3xl font-serif font-bold text-brand-dark">0,40 €</span>
+                                <span className="text-3xl font-serif font-bold text-brand-dark">0,50 €</span>
                                 <span className="text-sm text-gray-500 block">pro doppeltem Kilometer</span>
                             </div>
                             <p className="text-sm text-gray-600 leading-relaxed">
