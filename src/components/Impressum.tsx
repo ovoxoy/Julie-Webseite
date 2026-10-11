@@ -22,13 +22,13 @@ export const Impressum: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">Kontakt</h2>
             <p>Telefon: +49 1515 6930990</p>
-            <p>E-Mail: [info@pferdephysiotherapie-muenchen.de]</p>
+            <p>E-Mail: info@pferdephysiotherapie-muenchen.de</p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-2">Umsatzsteuer-ID</h2>
-            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:</p>
-            <p>[DE123456789] (Falls vorhanden, sonst diesen Abschnitt löschen)</p>
+            <h2 className="text-xl font-bold mb-2">Umsatzsteuer-ID / Steuernummer</h2>
+            <p>Steuer-Identifikationsnummer / USt-IdNr.:</p>
+            <p className="font-semibold text-brand-dark">92 068 134 358</p>
           </div>
 
           <div>

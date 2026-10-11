@@ -114,8 +114,8 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-lg mb-1">Erreichbarkeit</h4>
-                  <p className="text-brand-light">Mo - Fr: 08:00 - 18:00 Uhr</p>
-                  <p className="text-brand-light">Sa: Nach Vereinbarung</p>
+                  <p className="text-brand-light">Jederzeit für Sie da</p>
+                  <p className="text-brand-light text-sm">Per WhatsApp, Telefon oder E-Mail</p>
                 </div>
               </div>
 
@@ -126,6 +126,18 @@ export const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-bold text-lg mb-1">Einsatzgebiet</h4>
                   <p className="text-brand-light">Raum München & mobile Fahrpraxis.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-6 bg-white/5 rounded-2xl backdrop-blur-sm border border-white/10">
+                <div className="p-3 bg-brand-accent/20 rounded-full text-brand-accent">
+                  <Mail size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-1">E-Mail</h4>
+                  <a href="mailto:info@pferdephysiotherapie-muenchen.de" className="text-brand-light hover:text-white transition-colors text-lg block">
+                    info@pferdephysiotherapie-muenchen.de
+                  </a>
                 </div>
               </div>
             </div>

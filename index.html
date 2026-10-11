@@ -7,6 +7,22 @@
   <meta name="description"
     content="Juline Walch - Professionelle Pferdephysiotherapie und Rehabilitation in Süddeutschland. Manuelle Therapie, Lasertherapie und ganzheitliche Behandlung für Ihr Pferd." />
   <meta name="theme-color" content="#21304D">
+  <meta name="keywords" content="Pferdephysiotherapie, München, Starnberg, mobile Pferdebehandlung, Dorntherapie, Manuelle Therapie, Juline Walch">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Juline Walch | Pferdephysiotherapie München">
+  <meta property="og:description" content="Professionelle Pferdephysiotherapie und Rehabilitation im Raum München. Manuelle Therapie, Dorntherapie und ganzheitliche Behandlung für Ihr Pferd.">
+  <meta property="og:image" content="https://www.pferdephysiotherapie-muenchen.de/icon512.png">
+  <meta property="og:url" content="https://www.pferdephysiotherapie-muenchen.de/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Juline Walch Pferdephysiotherapie">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Juline Walch | Pferdephysiotherapie München">
+  <meta name="twitter:description" content="Professionelle Pferdephysiotherapie und Rehabilitation im Raum München. Manuelle Therapie, Dorntherapie und ganzheitliche Behandlung für Ihr Pferd.">
+  <meta name="twitter:image" content="https://www.pferdephysiotherapie-muenchen.de/icon512.png">
 
   <!-- SEO: Canonical Link -->
   <link rel="canonical" href="https://www.pferdephysiotherapie-muenchen.de/">
@@ -15,12 +31,12 @@
   <link rel="icon" type="image/png" href="icon32.png">
 
   <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="appletouch.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon192.png">
 
   <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
 
-  <title>Juline Walch | Pferdephysiotherapie</title>
+  <title>Juline Walch | Pferdephysiotherapie München – Mobile Pferdebehandlung</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -55,13 +71,15 @@
     "telephone": "+49 1515 6930990",
     "description": "Professionelle Pferdephysiotherapie und Rehabilitation in Süddeutschland. Manuelle Therapie, Massage und Lasertherapie für Gesundheit und Leistungsfähigkeit.",
     "image": [
-      "https://www.pferdephysiotherapie-muenchen.de//icon512.png",
-      "https://www.pferdephysiotherapie-muenchen.de//icon512.png"
+      "https://www.pferdephysiotherapie-muenchen.de/icon512.png"
      ],
-    "logo": "https://www.pferdephysiotherapie-muenchen.de//icon512.png",
+    "logo": "https://www.pferdephysiotherapie-muenchen.de/icon512.png",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Süddeutschland",
+      "streetAddress": "Grubenstraße 18",
+      "postalCode": "82319",
+      "addressLocality": "Starnberg",
+      "addressRegion": "Bayern",
       "addressCountry": "DE"
     },
     "geo": {
@@ -87,6 +105,8 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -103,12 +123,30 @@
       scrollbar-width: none;
       /* Firefox */
     }
+
+    /* Fade-in-up animation for modals and banners */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
   </style>
 
 </head>
 
 <body class="bg-brand-cream text-brand-dark antialiased">
   <div id="root"></div>
+  <noscript>
+    <p style="text-align:center;padding:2rem;font-family:sans-serif;">Bitte aktivieren Sie JavaScript, um diese Website zu nutzen.</p>
+  </noscript>
   <script type="module" src="/src/index.tsx"></script>
 </body>
 

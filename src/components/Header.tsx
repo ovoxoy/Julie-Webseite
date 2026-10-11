@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Menu, X, Phone, Calendar } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface HeaderProps {
   onNavigate: (page: 'home' | 'impressum' | 'datenschutz') => void;
@@ -66,6 +67,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     { name: 'Leistungen', href: '#services' },
     { name: 'Ablauf', href: '#process' },
     { name: 'Preise', href: '#pricing' },
+    { name: 'Galerie', href: '#gallery' },
   ];
 
   return (
@@ -77,20 +79,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo Section */}
-        <button onClick={() => onNavigate('home')} className="group z-50 relative flex items-center gap-4 text-left">
-          <img
-            src="icon512.png"
-            alt="Juline Walch Logo"
-            className="h-14 md:h-16 w-auto object-containy"
-          />
-          <div className={`flex flex-col justify-center transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 -translate-x-4' : 'opacity-100'}`}>
-            <h1 className="text-2xl md:text-3xl font-serif font-bold text-brand-dark tracking-wide group-hover:opacity-80 transition-opacity leading-none mb-0.5">
-              Juline Walch
-            </h1>
-            <span className="block text-[10px] md:text-[11px] font-sans font-bold text-brand-primary tracking-[0.2em] uppercase group-hover:text-brand-dark transition-colors">
-              Pferdephysiotherapie München
-            </span>
-          </div>
+        <button onClick={() => onNavigate('home')} className="group z-50 relative text-left">
+          <Logo />
         </button>
 
         {/* Desktop Nav */}
@@ -111,10 +101,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
           <button
             onClick={() => handleNavClick('#contact')}
-            className={`
-              flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5
-              ${(isScrolled || currentPage !== 'home') ? 'bg-brand-dark text-white hover:bg-brand-primary' : 'bg-brand-dark text-white hover:bg-brand-primary'}
-            `}
+            className="flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 bg-brand-dark text-white hover:bg-brand-primary"
           >
             <Calendar size={16} />
             <span>Termin anfragen</span>
