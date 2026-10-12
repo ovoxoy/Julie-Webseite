@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import React from 'react';
+import { MoveHorizontal, Sparkles } from 'lucide-react';
 import { ImagePlaceholder } from './ImagePlaceholder';
 
 interface GalleryItem {
@@ -8,8 +8,6 @@ interface GalleryItem {
 }
 
 export const Gallery: React.FC = () => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
   const galleryItems: GalleryItem[] = [
     {
       id: '1',
@@ -42,18 +40,11 @@ export const Gallery: React.FC = () => {
     }
   ];
 
-  const handleScroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -340 : 340;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <section id="gallery" className="py-24 bg-brand-cream/50 relative overflow-hidden">
+    <section id="gallery" className="py-12 md:py-24 bg-brand-cream/50 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
+          <div className="text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light/50 text-brand-dark text-xs font-bold tracking-widest uppercase mb-3">
               <Sparkles size={14} className="text-brand-primary" />
               <span>Einblicke</span>
@@ -65,36 +56,22 @@ export const Gallery: React.FC = () => {
               Momentaufnahmen aus dem Praxisalltag, Behandlungen und glücklichen Pferden.
             </p>
           </div>
-
-          {/* Scroll Navigation Buttons */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => handleScroll('left')}
-              aria-label="Nach links scrollen"
-              className="w-11 h-11 rounded-full bg-white border border-brand-light shadow-sm flex items-center justify-center text-brand-dark hover:bg-brand-primary hover:text-white transition-all active:scale-95"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={() => handleScroll('right')}
-              aria-label="Nach rechts scrollen"
-              className="w-11 h-11 rounded-full bg-white border border-brand-light shadow-sm flex items-center justify-center text-brand-dark hover:bg-brand-primary hover:text-white transition-all active:scale-95"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
         </div>
+
+        <p className="mb-2 flex items-center justify-center gap-2 text-xs text-gray-500/70 md:hidden">
+          <MoveHorizontal size={15} className="text-brand-primary/60" />
+          Wischen für weitere Bilder
+        </p>
 
         {/* Horizontale Scroll-Leiste ("Zum scrollen?") */}
         <div
-          ref={scrollContainerRef}
           className="flex gap-6 overflow-x-auto pb-8 pt-2 no-scrollbar scroll-smooth snap-x snap-mandatory"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {galleryItems.map((item, index) => (
             <div
               key={item.id}
-              className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] snap-start bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-light/70 flex flex-col group"
+              className="w-full shrink-0 sm:w-[320px] md:w-[350px] snap-start bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-light/70 flex flex-col group"
             >
               {/* Bild / Platzhalter */}
               <div className="relative overflow-hidden bg-brand-light/20">

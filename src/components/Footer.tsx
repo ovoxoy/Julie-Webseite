@@ -37,16 +37,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           {/* Column 1: Brand & Desc (Span 5) */}
           <div className="md:col-span-5 space-y-3">
-            <button onClick={() => onNavigate('home')} className="group text-left scale-90 origin-left">
+            <button onClick={() => onNavigate('home')} className="group mx-auto flex scale-90 origin-center text-center md:mx-0 md:origin-left md:text-left">
               <Logo variant="light" />
             </button>
-            <p className="text-brand-light/70 text-xs md:text-sm leading-relaxed max-w-sm">
+            <p className="mx-auto max-w-sm text-center text-brand-light/70 text-xs md:text-sm leading-relaxed md:mx-0 md:text-left">
               Ganzheitliche Therapie für Ihr Pferd mit Herz und Verstand. Mobil im Raum München und Umgebung.
             </p>
           </div>
 
           {/* Column 2: Navigation (Span 3) */}
-          <div className="md:col-span-3">
+          <div className="order-2 md:order-1 md:col-span-3">
             <h6 className="text-white font-semibold mb-2.5 md:mb-4 text-xs uppercase tracking-wider">Rechtliches</h6>
             <nav className="flex flex-col gap-2 md:gap-2.5 text-xs md:text-sm">
               <button
@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           {/* Column 3: Contact (Span 4) */}
-          <div className="md:col-span-4">
+          <div className="order-1 mt-3 md:order-2 md:mt-0 md:col-span-4">
             <h6 className="text-white font-semibold mb-2.5 md:mb-4 text-xs uppercase tracking-wider">Kontakt</h6>
             <div className="space-y-2.5 text-xs md:text-sm">
               <a href="mailto:info@pferdephysiotherapie-muenchen.de" className="flex items-center gap-2.5 text-brand-light/70 hover:text-white transition-colors group">

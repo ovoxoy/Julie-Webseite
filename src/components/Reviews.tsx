@@ -31,7 +31,7 @@ const reviews: Testimonial[] = [
 
 export const Reviews: React.FC = () => {
   return (
-    <section id="reviews" className="py-24 bg-white relative overflow-hidden">
+    <section id="reviews" className="py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>

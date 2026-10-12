@@ -7,7 +7,7 @@ export const About: React.FC = () => {
   const secondaryAboutImage = "/about2.jpeg";
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 

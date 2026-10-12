@@ -68,7 +68,7 @@ const IconMap: Record<string, React.FC<any>> = {
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 bg-brand-light/30">
+    <section id="services" className="py-12 md:py-24 bg-brand-light/30">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light/50 text-brand-dark text-xs font-bold tracking-widest uppercase mb-3">

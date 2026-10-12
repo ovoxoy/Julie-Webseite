@@ -69,7 +69,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-brand-dark text-white">
+    <section id="contact" className="py-12 md:py-24 bg-brand-dark text-white">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16">
 
@@ -77,9 +77,9 @@ export const Contact: React.FC = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-sm font-bold tracking-widest text-brand-accent uppercase mb-3">Kontakt</h2>
-              <h3 className="text-4xl font-serif font-bold mb-6">Lassen Sie uns sprechen.</h3>
+              <h3 className="text-4xl font-serif font-bold mb-8">Ich bin für Sie da</h3>
               <p className="text-brand-light/80 text-lg leading-relaxed">
-                Ich freue mich darauf, Sie und Ihr Pferd kennenzulernen. Rufen Sie mich an oder schreiben Sie mir eine Nachricht für einen Termin.
+                Ich freue mich darauf, Sie und Ihr Pferd kennenzulernen. Rufen Sie mich an oder schreiben Sie mir jederzeit eine Nachricht für einen Termin.
               </p>
             </div>
 

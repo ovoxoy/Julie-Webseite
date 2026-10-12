@@ -45,7 +45,7 @@ export const Process: React.FC = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-white relative overflow-hidden">
+    <section id="process" className="py-12 md:py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light/40 text-brand-dark text-xs font-bold tracking-widest uppercase mb-3">

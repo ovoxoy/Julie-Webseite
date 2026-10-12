@@ -3,7 +3,7 @@ import { Clock, MapPin, Heart, Info, Sparkles } from 'lucide-react';
 
 export const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="py-24 bg-brand-light/30 relative">
+    <section id="pricing" className="py-12 md:py-24 bg-brand-light/30 relative">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-light/50 text-brand-dark text-xs font-bold tracking-widest uppercase mb-3">
@@ -20,7 +20,7 @@ export const Pricing: React.FC = () => {
 
         <div className="grid lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
 
-          {/* Hauptpreiskarte (angepasst gemäß Skizzen-Beispiel: 70 € für 60 min + 10 € pro 10 min) */}
+          {/* Hauptpreiskarte */}
           <div className="lg:col-span-8 bg-white rounded-3xl shadow-xl overflow-hidden border border-brand-light/70 flex flex-col justify-between">
             <div className="p-8 md:p-12">
               <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
@@ -39,24 +39,22 @@ export const Pricing: React.FC = () => {
                 </span>
               </div>
 
-              {/* Preis-Staffelung (gemäß Skizze) */}
-              <div className="bg-brand-cream/60 rounded-2xl p-6 border border-brand-light/60 mb-6">
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 border-b border-brand-light/60 pb-4 mb-4">
-                  <div>
-                    <span className="text-4xl md:text-5xl font-serif font-bold text-brand-dark">70 €</span>
-                    <span className="text-sm font-medium text-gray-600 ml-2">Basispreis</span>
-                  </div>
-                  <span className="text-sm font-semibold text-brand-primary bg-white px-3 py-1 rounded-full shadow-sm w-fit">
-                    für ca. 60 Minuten
-                  </span>
+              {/* Preisübersicht */}
+              <div className="bg-brand-cream/60 rounded-2xl p-4 sm:p-6 border border-brand-light/60 mb-6">
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { minutes: 60, price: 70 },
+                    { minutes: 70, price: 80 },
+                    { minutes: 80, price: 90 },
+                    { minutes: 90, price: 100 },
+                  ].map(({ minutes, price }) => (
+                    <div key={minutes} className="flex flex-col items-center gap-0.5 rounded-xl bg-white px-2 py-2.5 text-center sm:flex-row sm:justify-between sm:gap-2 sm:px-3">
+                      <span className="text-xs font-medium text-gray-600 sm:text-sm">{minutes} Min.</span>
+                      <span className="whitespace-nowrap font-serif text-lg font-bold text-brand-dark">{price} €</span>
+                    </div>
+                  ))}
                 </div>
-
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between text-xs text-gray-600 gap-1.5 pt-0.5">
-                  <span className="font-normal text-gray-600">Verlängerungen:</span>
-                  <span className="font-semibold text-brand-dark bg-white/70 px-2 py-0.5 rounded-md border border-brand-light text-xs">
-                    + 10 € pro angefangene 10 Minuten
-                  </span>
-                </div>
+                <p className="mt-4 text-sm font-medium text-gray-600">Materialkosten bis zu 20 €</p>
               </div>
 
               {/* Erläuterungstext aus der Skizze */}
@@ -65,24 +63,8 @@ export const Pricing: React.FC = () => {
                   Jede Behandlung ist individuell. Ich gestalte sie ganz nach Ihrem Pferd, dessen Körpersprache und dem, was dem Pferd im Moment guttut.
                 </p>
                 <p>
-                  Kürzere Nachbehandlungen oder intensive Spezialeinheiten werden <strong>exakt nach tatsächlichem Zeitaufwand</strong> abgerechnet – so zahlen Sie nur das, was Ihr Pferd wirklich benötigt.
+                  Kürzere Nachbehandlungen oder intensive Spezialeinheiten werden <strong>nach tatsächlichem Zeitaufwand</strong> abgerechnet.
                 </p>
-              </div>
-
-              {/* Beispielrechnung / Transparenz-Checkliste */}
-              <div className="grid sm:grid-cols-3 gap-3 mb-8">
-                <div className="bg-white border border-brand-light p-3.5 rounded-xl text-center shadow-sm">
-                  <span className="block text-xs text-gray-500 uppercase font-semibold">60 Minuten</span>
-                  <span className="text-lg font-bold text-brand-dark font-serif">70 €</span>
-                </div>
-                <div className="bg-white border border-brand-light p-3.5 rounded-xl text-center shadow-sm">
-                  <span className="block text-xs text-gray-500 uppercase font-semibold">ca. 75–80 Minuten</span>
-                  <span className="text-lg font-bold text-brand-dark font-serif">85 € – 90 €</span>
-                </div>
-                <div className="bg-white border border-brand-light p-3.5 rounded-xl text-center shadow-sm">
-                  <span className="block text-xs text-gray-500 uppercase font-semibold">ca. 90 Minuten</span>
-                  <span className="text-lg font-bold text-brand-dark font-serif">100 €</span>
-                </div>
               </div>
 
               {/* Qualität vor Zeitdruck Box */}
@@ -113,7 +95,8 @@ export const Pricing: React.FC = () => {
 
                 <div className="mb-4 bg-brand-cream/50 p-4 rounded-2xl border border-brand-light/60">
                   <span className="text-3xl font-serif font-bold text-brand-dark">0,50 €</span>
-                  <span className="text-xs text-gray-500 block mt-1">pro gefahrenem Kilometer (ab 82319 Starnberg)</span>
+                  <span className="text-xs text-gray-500 block mt-1">pro gefahrenem Kilometer</span>
+                  <span className="text-xs text-gray-500 block mt-1">(ab 82319 Starnberg)</span>
                 </div>
 
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
@@ -140,7 +123,7 @@ export const Pricing: React.FC = () => {
                   href="#contact"
                   className="inline-block w-full py-3.5 bg-white text-brand-dark font-bold text-sm rounded-xl hover:bg-brand-accent transition-all shadow-md active:scale-95"
                 >
-                  Termin anfragen
+                  Kontaktieren Sie mich
                 </a>
               </div>
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary opacity-20 rounded-full blur-2xl transform translate-x-10 -translate-y-10 pointer-events-none"></div>
