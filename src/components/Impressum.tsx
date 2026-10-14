@@ -34,8 +34,11 @@ export const Impressum: React.FC = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">Angaben zur Berufshaftpflichtversicherung</h2>
             <p><strong>Name und Sitz des Versicherers:</strong></p>
-            <p>[Name der Versicherung]</p>
-            <p>[Anschrift der Versicherung]</p>
+            <p>Die Continentale</p>
+            <p>Continentale Versicherungsverbund auf Gegenseitigkeit</p>
+            <p>Landesdirektion - Zellerer GmbH</p>
+            <p>Forstenrieder Allee 70</p>
+            <p>81476 München</p>
             <p><strong>Geltungsraum der Versicherung:</strong> Deutschland</p>
           </div>
 

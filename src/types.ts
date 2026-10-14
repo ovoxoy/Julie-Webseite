@@ -3,7 +3,6 @@ export interface ServiceItem {
   title: string;
   description: string;
   iconName: string;
-  image?: string;
   badge?: string;
 }
 
@@ -14,10 +13,4 @@ export interface Testimonial {
   content: string;
   stars?: number;
   date?: string;
-}
-
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
-  isError?: boolean;
 }
